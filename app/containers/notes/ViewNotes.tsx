@@ -1,5 +1,5 @@
-import { Link } from "@remix-run/react";
-import React from "react";
+import { Form, Link } from "@remix-run/react";
+import React, { useEffect } from "react";
 
 const ViewNotesContainer = ({
   note,
@@ -7,7 +7,10 @@ const ViewNotesContainer = ({
   note: { id: number; title: string; body: string };
 }) => {
   return (
-    <div className="h-screen text-center flex flex-col justify-around items-center ">
+    <Form
+      method="delete"
+      className="h-screen text-center flex flex-col justify-around items-center "
+    >
       <div>
         <label className="text-3xl font-semibold">{note.title}</label>
         <p className="text-xl ">{note.body}</p>
@@ -16,11 +19,9 @@ const ViewNotesContainer = ({
         <Link to={`/notes/${note.id}/edit`} className="btn btn-ghost w-20">
           Edit
         </Link>
-        <button className="btn btn-error">
-          Delete
-        </button>
+        <button className="form-action btn btn-error">Delete</button>
       </div>
-    </div>
+    </Form>
   );
 };
 

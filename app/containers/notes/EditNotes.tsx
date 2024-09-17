@@ -9,7 +9,7 @@ const EditNotesContainer = ({
   return (
     <div className="h-screen flex flex-1 justify-center items-center">
       <Form
-        method="post"
+        method="put"
         className="flex flex-col justify-center items-center gap-2"
       >
         <label className="font-semibold text-3xl">Edit a note</label>
